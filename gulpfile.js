@@ -12,6 +12,8 @@ const gulp = require('gulp'),
 
 
 const cssfiles = [
+  './app/sass/reset.scss',
+  './app/sass/vars.scss',
   './app/sass/main.scss',
   './app/sass/media.scss'
 ]
