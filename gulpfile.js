@@ -57,6 +57,10 @@ function scripts () {
   .pipe(gulp.dest('./dist/js'))
   .pipe(browserSync.stream())
 }
+function redir () {
+  return gulp.src('./*.html') 
+	.pipe(gulp.dest('dist'));
+}
 function clean () {
   return del(['dist/*'])
 }
@@ -78,5 +82,6 @@ gulp.task('scripts', scripts);
 gulp.task('del', clean);
 gulp.task('sassCompile', sassCompile);
 gulp.task('imageMinifi', imageMinifi);
+gulp.task('redir', redir);
 gulp.task('watch', watch);
-gulp.task('build', gulp.series(clean, imageMinifi, gulp.parallel('scripts', 'sassCompile')));
+gulp.task('build', gulp.series(clean, imageMinifi, redir, gulp.parallel('scripts', 'sassCompile')));

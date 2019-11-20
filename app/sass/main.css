@@ -1,0 +1,256 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* reset padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* reset margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* remove list-style */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* reset default style  */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* inherit parent styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: #F4F5FC;
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  position: relative;
+  line-height: 180%;
+}
+
+a {
+  color: #5A61ED;
+}
+
+.button {
+  background: #5A61ED;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  width: 154px;
+  color: #ffffff;
+  font-family: "PT Sans", sans-serif;
+  cursor: pointer;
+  transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button:hover {
+  opacity: .7;
+  transform: translateY(5px);
+}
+
+.singin {
+  display: flex;
+  position: absolute;
+  top: calc(50% - 240px);
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 665px;
+  height: 481px;
+  background: #ffffff;
+}
+
+.singin .sing {
+  width: 138px;
+  height: 100%;
+  background: #5A61ED;
+  position: relative;
+}
+
+.singin .sing__title {
+  position: absolute;
+  bottom: 70px;
+  right: -30px;
+  color: #ffffff;
+  font-family: "PT Sans", sans-serif;
+  font-size: 48px;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+}
+
+.singin .register {
+  width: 100%;
+}
+
+.singin .register__auth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.singin .register .wrap {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.singin .form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.singin .form__line {
+  flex-basis: 48%;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.singin .form__input {
+  width: 95%;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.singin .form__label {
+  color: #7C7C7C;
+  font-size: 12px;
+}
+
+.singin .form__select-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.singin .form__select {
+  border: none;
+  outline: none;
+  position: relative;
+  font-family: inherit;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.singin .form__select:nth-child(1) {
+  flex-basis: 150px;
+}
+
+.singin .form__select::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: ">";
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.singin .form__option {
+  font-family: inherit;
+}
+
+.singin .form__radio {
+  display: none;
+}
+
+.singin .form__radio-label {
+  position: relative;
+}
+
+.singin .form__text {
+  position: relative;
+  padding-left: 20px;
+  display: inline-block;
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+}
+
+.singin .form__text::before {
+  content: '';
+  left: 0;
+  top: 50%;
+  margin-top: -7px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #5A61ED;
+  border-radius: 10em;
+  position: absolute;
+}
+
+.singin .form__text::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  left: 3px;
+  display: block;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background: #5A61ED;
+  opacity: 0;
+  transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.singin .form .form__radio:checked + .form__text::after {
+  opacity: 1;
+}
